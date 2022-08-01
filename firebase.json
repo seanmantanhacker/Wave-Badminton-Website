@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "public": "public",
+    "cleanUrls": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "appAssociation": "AUTO",
+    "rewrites": [
+      {
+        "source": "/**",    
+        "dynamicLinks": true,
+        "destination": "/404.html"
+      },{
+         "source": "/",     
+         "destination": "/index.html"
+      }    
+    ],
+   //  "redirects": [
+   //    {
+   //       "source": "/",
+   //       "destination": "/500.html",
+   //       "type": 301
+   //    }
+   // ],
+    "headers": [
+      {
+         "source": "**",
+         "headers": [
+            {
+               "key": "Access-Control-Allow-Origin",
+               "value": "*"
+            }
+         ]
+      }
+   ]
+  }
+}

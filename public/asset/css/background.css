@@ -1,0 +1,115 @@
+.container {
+   height: 100vh;
+   background-image:url('/asset/a.jpg');
+   background-color: rgba(255, 255, 255, 0.486);
+   background-blend-mode: overlay;
+   background-position: center top;
+   background-repeat: no-repeat;
+   background-size: cover;
+   text-align: center;
+   width: 100%;
+   
+}
+
+.glow-on-hover {
+   top:40%;
+   width: 70%;
+   height: 20%;
+   border: none;
+   outline: none;
+   color: rgb(0, 0, 0);
+   background: rgba(98, 217, 253, 0.459);
+   cursor: pointer;
+   position: relative;
+   margin:15px;
+   border-radius: 7px;
+   z-index: 0;
+   font-size: 2.3em;
+   font-weight: 900;
+   border-radius: 10px;
+   display: inline-block;
+}
+
+.glow-on-hover:before {
+   content: '';
+   background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+   position: absolute;
+   top: -2px;
+   left: -2px;
+   background-size: 400%;
+   z-index: -1;
+   filter: blur(5px);
+   width: calc(100% + 4px);
+   height: calc(100% + 4px);
+   animation: glowing 20s linear infinite;
+   opacity: 0;
+   transition: opacity .3s ease-in-out;
+   border-radius: 10px;
+}
+
+.glow-on-hover:active {
+   color: rgb(250, 250, 250) !important;
+   
+}
+
+.glow-on-hover:hover {
+   color: rgb(250, 250, 250) !important;
+
+}
+
+.glow-on-hover:active:after {
+   background: transparent;
+   color: #dff3b2;
+   
+}
+
+.glow-on-hover:hover:before {
+   opacity: 1;
+   color: #dff3b2;
+}
+
+.glow-on-hover:after {
+   z-index: -1;
+   content: '';
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-image: linear-gradient(120deg, #c3f352 0%, #45e75b 100%);
+   left: 0;
+   top: 0;
+   border-radius: 10px;
+   color: #dff3b2;
+}
+
+@keyframes glowing {
+   0% {
+      background-position: 0 0;
+   }
+
+   50% {
+      background-position: 400% 0;
+   }
+
+   100% {
+      background-position: 0 0;
+   }
+}
+
+.rules {
+   position:absolute;
+   right: 0;
+   margin: 15px;
+   width: 150px;
+   height: 75px;
+   background-color: #7a00ff;
+   border: #dff3b2 solid 1px;
+   color:white;
+   font-size: medium;
+   font-weight: 700;
+   border-radius: 10px;
+}
+
+.rules:hover {
+   background-color: #fffb00;
+   color: black;
+}
